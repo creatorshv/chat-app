@@ -21,4 +21,12 @@ authRouter.get("/logout", jwtAuth, (req, res, next) => {
   authcontroller.logout(req, res, next);
 });
 
+authRouter.put("/update-profile", jwtAuth, (req, res, next) => {
+  authcontroller.updateProfile(req, res, next);
+});
+
+authRouter.get("/check-auth", jwtAuth, (req, res, next) => {
+  authcontroller.checkAuth(req, res, next);
+});
+
 export default authRouter;
