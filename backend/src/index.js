@@ -7,6 +7,7 @@ import fileUpload from "express-fileupload";
 // Local module imports
 import { connectDB } from "./lib/dbConfig.js";
 import authRouter from "./routes/auth.route.js";
+import messageRouter from "./routes/message.route.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -18,6 +19,7 @@ app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 
 // Routes
 app.use("/api/auth", authRouter);
+app.use("/api/message", messageRouter);
 
 // Launch
 app.listen(PORT, () => {
