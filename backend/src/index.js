@@ -3,6 +3,7 @@ import "./lib/env.js";
 import express from "express";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import cors from "cors";
 
 // Local module imports
 import { connectDB } from "./lib/dbConfig.js";
@@ -16,6 +17,12 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Routes
 app.use("/api/auth", authRouter);
