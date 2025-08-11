@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,8 +45,10 @@ function SignUpPage() {
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
+      {/* left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
+          {/* LOGO */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
               <div
@@ -74,9 +77,9 @@ function SignUpPage() {
                   type="text"
                   className={`input input-bordered w-full pl-10`}
                   placeholder="John Doe"
-                  value={formData.fullname}
+                  value={formData.fullName}
                   onChange={(e) =>
-                    setFormData({ ...formData, fullname: e.target.value })
+                    setFormData({ ...formData, fullName: e.target.value })
                   }
                 />
               </div>
@@ -125,9 +128,9 @@ function SignUpPage() {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <Eye className="size-5 text-base-content/40" />
-                  ) : (
                     <EyeOff className="size-5 text-base-content/40" />
+                  ) : (
+                    <Eye className="size-5 text-base-content/40" />
                   )}
                 </button>
               </div>
@@ -148,8 +151,19 @@ function SignUpPage() {
               )}
             </button>
           </form>
+
+          <div className="text-center">
+            <p className="text-base-content/60">
+              Already have an account?{" "}
+              <Link to="/login" className="link link-primary">
+                Sign in
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
+
+      {/* right side */}
 
       <AuthImagePattern
         title="Join our community"
