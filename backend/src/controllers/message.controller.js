@@ -12,7 +12,7 @@ export default class MessageController {
   async getUsers(req, res, next) {
     try {
       const users = await this.messageRepository.getUsers(req.userID);
-      res.status(200).json({ success: true, data: users });
+      res.status(200).json({ success: true, message: users });
     } catch (error) {
       res.status(400).json({ success: false, message: error.message });
     }
