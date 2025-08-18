@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { User, Mail, Camera } from "lucide-react";
 
-function ProfilePage() {
+const ProfilePage = () => {
   const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
+    setSelectedImage(URL.createObjectURL(file));
 
     const formData = new FormData();
     formData.append("profilePic", file);
@@ -29,9 +30,7 @@ function ProfilePage() {
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
               <img
-                src={
-                  selectedImage || authUser.profilePic || "/public/avatar.png"
-                }
+                src={selectedImage || authUser.profilePic || "/avatar.png"}
                 alt="Profile"
                 className="size-32 rounded-full object-cover border-4 "
               />
@@ -104,6 +103,6 @@ function ProfilePage() {
       </div>
     </div>
   );
-}
+};
 
 export default ProfilePage;

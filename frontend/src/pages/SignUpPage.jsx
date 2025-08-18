@@ -13,7 +13,7 @@ import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
-function SignUpPage() {
+const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     fullname: "",
@@ -170,6 +170,6 @@ function SignUpPage() {
       />
     </div>
   );
-}
+};
 
 export default SignUpPage;

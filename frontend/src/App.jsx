@@ -11,7 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
 
-function App() {
+const App = () => {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
 
   useEffect(() => {
@@ -55,6 +55,6 @@ function App() {
       <Toaster />
     </div>
   );
-}
+};
 
 export default App;

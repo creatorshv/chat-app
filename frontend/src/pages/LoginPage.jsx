@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
 
-function LoginPage() {
+const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -139,5 +139,5 @@ function LoginPage() {
       />
     </div>
   );
-}
+};
 export default LoginPage;
