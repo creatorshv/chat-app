@@ -28,7 +28,6 @@ function LoginPage() {
     event.preventDefault();
     const success = validateForm();
 
-    console.log(formData);
     if (success) login(formData);
   };
 

@@ -77,9 +77,9 @@ function SignUpPage() {
                   type="text"
                   className={`input input-bordered w-full pl-10`}
                   placeholder="John Doe"
-                  value={formData.fullname}
+                  value={formData.fullName}
                   onChange={(e) =>
-                    setFormData({ ...formData, fullname: e.target.value })
+                    setFormData({ ...formData, fullName: e.target.value })
                   }
                 />
               </div>
