@@ -9,8 +9,8 @@ import cors from "cors";
 import { connectDB } from "./lib/dbConfig.js";
 import authRouter from "./routes/auth.route.js";
 import messageRouter from "./routes/message.route.js";
+import { app, server } from "./lib/socket.js";
 
-const app = express();
 const PORT = process.env.PORT;
 
 // Middlewares
@@ -29,7 +29,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/message", messageRouter);
 
 // Launch
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("Server is running on PORT: " + PORT);
   connectDB();
 });
