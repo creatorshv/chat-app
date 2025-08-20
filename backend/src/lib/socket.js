@@ -11,7 +11,7 @@ const io = new Server(server, {
   },
 });
 
-const userSocketMap = {};
+const userSocketMap = {}; //online users {userId:socketId}
 
 io.on("connection", (socket) => {
   console.log("A user connected", socket.id);
