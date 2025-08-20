@@ -2,6 +2,7 @@
 import UserModel from "../models/user.model.js";
 import MessageModel from "../models/message.model.js";
 import cloudinary from "../lib/cloudinary.js";
+import { getReceiverSocketId, io } from "../lib/socket.js";
 
 /**
  * Repository for handling message-related database operations.
@@ -71,6 +72,11 @@ export default class MessageRepository {
         text,
         image: imageUrl,
       });
+
+      const receiverSocketId = getReceiverSocketId(receiverID);
+      if (receiverSocketId) {
+        io.to(receiverSocketId).emit("newMessage", newMessage);
+      }
 
       await newMessage.save();
       return newMessage;
