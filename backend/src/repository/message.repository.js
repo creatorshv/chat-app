@@ -15,7 +15,7 @@ export default class MessageRepository {
    */
   async getUsers(userID) {
     try {
-      const users = await UserModel.find({ _id: { $ne: userID } }).lean();
+      const users = await UserModel.find({ _id: { $ne: userID } });
       return users;
     } catch (error) {
       throw new Error("Failed to retrieve users. Please try again later.");
