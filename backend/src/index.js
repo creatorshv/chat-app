@@ -12,7 +12,7 @@ import authRouter from "./routes/auth.route.js";
 import messageRouter from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 
 // Middlewares
@@ -30,7 +30,11 @@ app.use(
 app.use("/api/auth", authRouter);
 app.use("/api/message", messageRouter);
 
-if (process.env.NODE_ENV == "production") {
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
