@@ -1,13 +1,18 @@
 # Chat App (MERN)
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9d3ce853-87cd-4468-88ed-4568cff2865a" />
----
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b6234725-2031-41ff-8b7f-3766fced275f" />
----
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/bb86473d-8b6e-468f-a5dd-bb1ec09cd154" />
----
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7a91d371-04fe-44b6-87bc-6f63ee90c382" />
 
 A modern real-time chat application built on the **MERN stack** with support for **authentication, messaging & media messaging, and user profiles**. Designed for smooth and interactive communication with a polished UI.
+
+---
+
+### Live Demo
+[See Here](https://chat-app-eb4h.onrender.com/login)
 
 ---
 
